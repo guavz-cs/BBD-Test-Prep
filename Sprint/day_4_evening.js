@@ -21,6 +21,8 @@ function getDay(day, isLeap){
   return [month, day].join(", ");
 }
 
+//incomplete
+
 // Complete the following function that will return the difference in years (age) for a birthdate, and optionally a "now" date. Both arguments to the function are expected to be Date objects. The returned difference can be either positive or negative.
 
 // getAge(new Date('1980/01/01')) === 33 // assuming today's date is 2013/08/01
