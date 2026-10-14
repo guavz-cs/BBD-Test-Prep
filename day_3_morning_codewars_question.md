@@ -36,3 +36,23 @@ Make a function that takes in a 5-letter guess and, comparing it to a known solu
 | `xxxxz` | `aaaax` | `ybbbb`         | First `x` is `y`, each one after `b` |
 
 See the example tests on the original kata page for more.
+
+## Expected Outputs (my tests)
+
+```javascript
+console.log(resolver("blows", "world")); // byyyb
+console.log(resolver("bleed", "world")); // bybbg
+console.log(resolver("world", "world")); // ggggg
+console.log(resolver("reads", "sales")); // byybg
+console.log(resolver("wooer", "ivory")); // bbgby
+console.log(resolver("xxxxz", "yyyyx")); // ybbbb
+```
+
+| Guess   | Answer  | Expected Output | Note                                                              |
+| ------- | ------- | --------------- | ----------------------------------------------------------------- |
+| `blows` | `world` | `byyyb`         |                                                                   |
+| `bleed` | `world` | `bybbg`         |                                                                   |
+| `world` | `world` | `ggggg`         | Exact match                                                       |
+| `reads` | `sales` | `byybg`         | Final `s` is green                                                |
+| `wooer` | `ivory` | `bbgby`         | Answer has one `o`: the green `o` wins, so the earlier `o` is `b` |
+| `xxxxz` | `yyyyx` | `ybbbb`         | Answer has one `x`: only the first `x` is `y`, the rest are `b`   |
