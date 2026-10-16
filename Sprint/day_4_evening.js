@@ -37,12 +37,18 @@ function getDay(day, isLeap){
  * @param {Date} nowDate
  * @return  {Number}
  */
-function getAge(birthDate, nowDate) {
+function getAge(birthDate, nowDate = new Date()) {
   let bDate = new Date(birthDate);
   let nDate = new Date(nowDate);
+  
   let result = nDate.getFullYear() - bDate.getFullYear();
-  //if(nDate.getMonth() >= bDate.getMonth && nDate.getDate() >= bDate.getDate())
+  
+  let months = nDate.getMonth() - bDate.getMonth();
+  let days = nDate.getDate() - bDate.getDate();
+  
+  if(months < 0|| (months === 0 && days < 0)) {
+    return result - 1;
+  }
+  
   return result;
-  //else
-    //return result - 1;
 }
